@@ -8,4 +8,4 @@
 目前过量喂食反馈不是特别丰富，欢迎为此模组做出贡献。
 
 开源仓库：https://github.com/Hgnim/VPet.Plugin.OverdoseEat \
-模组地址：
+模组地址：https://steamcommunity.com/sharedfiles/filedetails/?id=3427675863
