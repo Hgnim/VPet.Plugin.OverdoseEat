@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<OutputType>Library</OutputType>
+		<UseWPF>true</UseWPF>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+
+		<Title>VPet.Plugin.OverdoseEat</Title>
+		<AssemblyTitle>$(Title)</AssemblyTitle>
+		<Authors>Hgnim</Authors>
+
+		<AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
+		<FileVersion>$(VersionPrefix)</FileVersion>
+		<VersionPrefix>1.0.0</VersionPrefix>
+		<VersionSuffix></VersionSuffix>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="VPet-Simulator.Core" Version="1.1.0.48" />
+		<PackageReference Include="VPet-Simulator.Windows.Interface" Version="1.1.0.48" />
+	</ItemGroup>
+</Project>
