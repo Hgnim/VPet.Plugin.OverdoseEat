@@ -1,0 +1,16 @@
+clicktext:|Working#sepak_foodOverflowLow:|Text#吃的饱饱的，好满足。:|Tag#all:|
+
+clicktext:|Working#sepak_foodOverflowMid:|Text#嗯，有点吃撑了。:|Tag#all:|
+
+clicktext:|Working#sepak_foodOverflowHigh:|Text#吃太多了，实在吃不下了。:|Tag#all:|
+
+clicktext:|Working#sepak_foodOverflowDanger:|Text#呜呜呜，肚皮要撑破了。:|Tag#all:|
+
+
+clicktext:|Working#sepak_drinkOverflowLow:|Text#水分补充到位。:|Tag#all:|
+
+clicktext:|Working#sepak_drinkOverflowMid:|Text#嗯，现在我肚子好多水。:|Tag#all:|
+
+clicktext:|Working#sepak_drinkOverflowHigh:|Text#太多水了，好涨啊。:|Tag#all:|
+
+clicktext:|Working#sepak_drinkOverflowDanger:|Text#喝太多水了好难受。:|Tag#all:|

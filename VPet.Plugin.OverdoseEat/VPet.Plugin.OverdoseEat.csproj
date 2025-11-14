@@ -18,7 +18,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="VPet-Simulator.Core" Version="1.1.0.48" />
-		<PackageReference Include="VPet-Simulator.Windows.Interface" Version="1.1.0.48" />
+		<PackageReference Include="VPet-Simulator.Core" Version="1.1.0.52" />
+		<PackageReference Include="VPet-Simulator.Windows.Interface" Version="1.1.0.52" />
 	</ItemGroup>
 </Project>
