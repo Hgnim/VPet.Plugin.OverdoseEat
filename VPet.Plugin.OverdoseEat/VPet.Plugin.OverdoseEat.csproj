@@ -6,14 +6,19 @@
 		<UseWPF>true</UseWPF>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 
-		<Title>VPet.Plugin.OverdoseEat</Title>
-		<AssemblyTitle>$(Title)</AssemblyTitle>
-		<Authors>Hgnim</Authors>
-
-		<AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
-		<FileVersion>$(VersionPrefix)</FileVersion>
-		<VersionPrefix>1.0.0</VersionPrefix>
+		<AssemblyVersion>1.1.0.1115</AssemblyVersion>
+		<FileVersion>1.1.0.1115</FileVersion>
+		<VersionPrefix>1.1.0.20251115</VersionPrefix>
 		<VersionSuffix></VersionSuffix>
+
+		<Authors>Hgnim</Authors>
+		<Company>$(Authors)</Company>
+		<Owners>$(Authors)</Owners>
+		<Product>OverdoseEat</Product>
+		<Title>"过量进食"桌宠插件</Title>
+		<AssemblyTitle>$(Title)</AssemblyTitle>
+		<Description>OverdoseEat</Description>
+		<AssemblyName>VPet.Plugin.OverdoseEat</AssemblyName>
 
 	</PropertyGroup>
 

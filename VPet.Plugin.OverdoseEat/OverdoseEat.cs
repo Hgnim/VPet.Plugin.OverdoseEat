@@ -52,19 +52,19 @@ namespace VPet.Plugin.OverdoseEat {
 			if (targetValueInput > 0) {
 				if (targetValueInput < 100) {
 					targetValueInput -= MW.Core.Save.Health * 0.3;
-					MW.Core.Save.Health-= targetValueInput*0.01;
+					MW.Core.Save.Health-= targetValueInput*0.005;
 				}
 				else if (targetValueInput < 200) {
 					targetValueInput -= MW.Core.Save.Health * 0.2;
-					MW.Core.Save.Health-= targetValueInput*0.013;
+					MW.Core.Save.Health-= targetValueInput*0.01;
 				}
 				else if (targetValueInput < 300) {
 					targetValueInput -= MW.Core.Save.Health * 0.1 + 10;
-					MW.Core.Save.Health-= targetValueInput * 0.02;
+					MW.Core.Save.Health-= targetValueInput * 0.015;
 				}
 				else {
 					targetValueInput -= MW.Core.Save.Health * 0.1 + 15;
-					MW.Core.Save.Health-= targetValueInput * 0.025;
+					MW.Core.Save.Health-= targetValueInput * 0.02;
 				}
 			}
 			return targetValueInput;
@@ -81,28 +81,44 @@ namespace VPet.Plugin.OverdoseEat {
 					: dat.DrinkOverflow;
 
 				if (ofValue < 100) {
-					if(type==0)
+					if (type == 0 && dat.FoodOfStatus!=Data.OverflowType.low) {
+						dat.FoodOfStatus = Data.OverflowType.low;
 						MW.Main.Say(Langs.SpeakC.GetSpeakRan(lang.Speak.foodOverflowLow));
-					else
+					}
+					else if(type==1 && dat.DrinkOfStatus!=Data.OverflowType.low) {
+						dat.DrinkOfStatus = Data.OverflowType.low;
 						MW.Main.Say(Langs.SpeakC.GetSpeakRan(lang.Speak.drinkOverflowLow));
+					}
 				}
 				else if (ofValue < 200) {
-					if (type == 0)
+					if (type == 0 && dat.FoodOfStatus != Data.OverflowType.mid) {
+						dat.FoodOfStatus = Data.OverflowType.mid;
 						MW.Main.Say(Langs.SpeakC.GetSpeakRan(lang.Speak.foodOverflowMid));
-					else
+					}
+					else if (type == 1 && dat.DrinkOfStatus != Data.OverflowType.mid) {
+						dat.DrinkOfStatus = Data.OverflowType.mid;
 						MW.Main.Say(Langs.SpeakC.GetSpeakRan(lang.Speak.drinkOverflowMid));
+					}
 				}
 				else if (ofValue < 300) {
-					if (type == 0)
+					if (type == 0 && dat.FoodOfStatus != Data.OverflowType.high) {
+						dat.FoodOfStatus = Data.OverflowType.high;
 						MW.Main.Say(Langs.SpeakC.GetSpeakRan(lang.Speak.foodOverflowHigh));
-					else
+					}
+					else if (type == 1 && dat.DrinkOfStatus != Data.OverflowType.high) {
+						dat.DrinkOfStatus = Data.OverflowType.high;
 						MW.Main.Say(Langs.SpeakC.GetSpeakRan(lang.Speak.drinkOverflowHigh));
+					}
 				}
 				else {
-					if (type == 0)
+					if (type == 0 && dat.FoodOfStatus != Data.OverflowType.danger) {
+						dat.FoodOfStatus = Data.OverflowType.danger;
 						MW.Main.Say(Langs.SpeakC.GetSpeakRan(lang.Speak.foodOverflowDanger));
-					else
+					}
+					else if (type == 1 && dat.DrinkOfStatus != Data.OverflowType.danger) {
+						dat.DrinkOfStatus = Data.OverflowType.danger;
 						MW.Main.Say(Langs.SpeakC.GetSpeakRan(lang.Speak.drinkOverflowDanger));
+					}
 				}
 			}
 			void foodOf() => of(0);
@@ -113,8 +129,12 @@ namespace VPet.Plugin.OverdoseEat {
 			if (ofFoodValue > 0 || ofDrinkValue > 0) {
 				if (ofFoodValue > 0)
 					dat.FoodOverflow += ofFoodValue;
+				else
+					dat.FoodOfStatus = Data.OverflowType.none;
 				if (ofDrinkValue > 0)
 					dat.DrinkOverflow += ofDrinkValue;
+				else
+					dat.DrinkOfStatus = Data.OverflowType.none;
 				if (ofFoodValue>0 && ofDrinkValue>0) {
 					if(food.StrengthFood > food.StrengthDrink)
 						foodOf();

@@ -22,5 +22,25 @@ namespace VPet.Plugin.OverdoseEat {
 			get => drinkOverflow;
 			set => drinkOverflow = value > 0 ? value : 0;
 		}
+
+		internal enum OverflowType {
+			none, low, mid, high, danger
+		}
+		private OverflowType foodOfStatus = OverflowType.none;
+		/// <summary>
+		/// 当前食物溢出状态
+		/// </summary>
+		internal OverflowType FoodOfStatus {
+			get => foodOfStatus;
+			set => foodOfStatus = value;
+		}
+		private OverflowType drinkOfStatus = OverflowType.none;
+		/// <summary>
+		/// 当前饮品溢出状态
+		/// </summary>
+		internal OverflowType DrinkOfStatus {
+			get => drinkOfStatus;
+			set => drinkOfStatus = value;
+		}
 	}
 }
